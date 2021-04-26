@@ -4,10 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/my_projects/my_projects.dart';
 import 'package:myportfolio/views/home/home_view.dart';
 
-void main() {
-  print('testing print');
-runApp(MyApp());
-} 
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -16,13 +13,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'My Portfolio',
       theme: ThemeData(
-      // This is the theme of the application.
+        // This is the theme of the application.
         textTheme: GoogleFonts.ubuntuMonoTextTheme(
-        Theme.of(context).textTheme,
-      ),
+          Theme.of(context).textTheme,
+        ),
       ),
       home: HomeView(),
     );
   }
 }
-
