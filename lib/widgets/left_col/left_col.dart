@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myportfolio/constants/adaptiveSize.dart';
 import 'package:myportfolio/constants/app_colors.dart';
-import 'package:myportfolio/my_projects/my_projects.dart';
+import 'package:myportfolio/widgets/my_projects/my_projects.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_cursor/flutter_cursor.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,9 +13,15 @@ const url =
 class LeftCol extends StatelessWidget {
   final String logo = 'bg_logo.svg';
 
+  final Function handleProjectOnTap;
+
+  LeftCol({
+    this.handleProjectOnTap,
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.fromLTRB(100, 40, 0, 40),
       decoration: BoxDecoration(color: desertStorm),
       width: MediaQuery.of(context).size.width * 0.6,
       height: MediaQuery.of(context).size.height * 1,
@@ -26,7 +33,9 @@ class LeftCol extends StatelessWidget {
             child: TextButton(
               child: Text(
                 'Björg Gunnarsdóttir  LinkedIn',
-                style: GoogleFonts.ubuntuMono(),
+                style: GoogleFonts.ubuntuMono(
+                  fontSize: AdaptiveSize().getadaptiveSize(context, 18),
+                ),
               ),
               style: TextButton.styleFrom(
                 primary: merlin,
@@ -37,12 +46,31 @@ class LeftCol extends StatelessWidget {
             ),
           ),
         ),
-        Row(crossAxisAlignment: CrossAxisAlignment.end, children: <Widget>[
-          Text('Collabrative projects'),
-          SvgPicture.asset(logo, semanticsLabel: 'bg logo'),
-        ]),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+          child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Text(
+                  'Projects',
+                  style: TextStyle(
+                    fontSize: AdaptiveSize().getadaptiveSize(context, 18),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                  child: SvgPicture.asset(
+                    logo,
+                    semanticsLabel: 'bg logo',
+                    width: AdaptiveSize().getadaptiveSize(context, 105),
+                  ),
+                ),
+              ]),
+        ),
         Expanded(
-          child: MyProjects(),
+          child: MyProjects(
+            handleProjectOnTap: handleProjectOnTap,
+          ),
         ),
       ]),
     );
