@@ -43,7 +43,7 @@ class MyProjects extends StatelessWidget {
         'Stofan - fictional web design studio',
         'Collabrative',
         'HTML, CSS',
-        'This is my first group project were we created a website for a fictional web design studio. \n\nThis project was about “testing the water”. Creating a UI, coding it, deploying it and presenting the work to industry professionals. \n\nThe group used Agile techniques to organize the work, created the UI in Figma, coded with HTML and CSS and deployed on GitHub',
+        'This is my first group project were we created a website for a fictional web design studio. \n\nThis project was about “testing the water”. Creating a UI, coding it, deploying it and presenting the work to industry professionals. \n\nThe group used Agile techniques to organize the work, created the UI in Figma, coded with HTML and CSS and deployed on GitHub.',
         'Stofan_logo.svg',
         'Stofan_img.png',
         'https://github.com/Huldas96/Stofan',
@@ -55,8 +55,8 @@ class MyProjects extends StatelessWidget {
         'Collabrative',
         'HTML, SCSS, JavaScript',
         'This is an Icelandic health tracker calendar app. It is a single page Interactive and Responsive Web Application. \n\nThe user can create their own conditions or appointments that will be logged into a calendar. All logged information is stored in local storage so that the user can keep track of his/her own health.',
-        'logo url',
-        'image',
+        'health_app_logo.svg',
+        'health_app_img.png',
         'https://github.com/johannTor/health-app',
         'http://heilsanmin.surge.sh'));
     myProjects.add(Project(
@@ -66,8 +66,8 @@ class MyProjects extends StatelessWidget {
         'Collabrative',
         'React, React Leaflet ...',
         'In this project we worked with API\'s, React, Packages, modules and bundlers, UX and much more. \n\nOur web-application is all about Icelandic beers and breweries. The frontpage renders a map with your location(optional) and it shows you the nearest breweries to you. You can flip and sort through a lists of all beers or breweries. Each brewery has its own information page containing a list with all of their beers. In the beer list you can toggle heart or checkbox for each beer to keep track of what you have loved and what you have tried.',
-        'logo url',
-        'image',
+        'ol_logo.svg',
+        'ol_img.png',
         'https://github.com/alexanderjarl91/bruggid',
         'https://oliceland.netlify.app'));
     myProjects.add(Project(
@@ -77,8 +77,8 @@ class MyProjects extends StatelessWidget {
         'Individual',
         'HTML, CSS, JavaScript',
         'This is a school project working with History API and local storage. I created a single page application (SPA) plant collection. There are three pages; front page, plant collection and favorites. On each plant you can click on a more info button to show more info and click again to hide it. Each plant has also a add to favorites button and when you click it the plant shows on favorites page and the button changes color and displays remove from favorites. You can click on the remove button on either page to remove the plant from the favorite page. The plant array is set to local storage so the plants stay as favorites when you refresh.',
-        'logo url',
-        'image',
+        'plant_collection.svg',
+        'plant_coll_img.png',
         'https://github.com/bjorgg/JavaScript-Web-APIs',
         'https://bjorgg.github.io/JavaScript-Web-APIs'));
     myProjects.add(Project(
@@ -88,8 +88,8 @@ class MyProjects extends StatelessWidget {
         'Individual',
         'React, CSS',
         'This is a school project in using React. I created a simple memory card game. For this assignment I decided not to have any extra features as score, high score or difficulties. But it\'s possible to add later. You can play the game and start a new game, that\'s it. Everybody should now how to play memory so i won\'t explain it here. You can find comments in the JavaScript files.',
-        'logo url',
-        'image',
+        'memory_game.svg',
+        'mem_game_img.png',
         'https://github.com/bjorgg/React-Memory-game',
         'https://bjorgg.github.io/React-Memory-game'));
 

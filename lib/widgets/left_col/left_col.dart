@@ -52,7 +52,7 @@ class LeftCol extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 Text(
-                  'Projects',
+                  'Web development projects',
                   style: TextStyle(
                     fontSize: AdaptiveSize().getadaptiveSize(context, 18),
                   ),
