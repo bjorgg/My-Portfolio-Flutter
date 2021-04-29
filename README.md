@@ -1,16 +1,15 @@
-# myportfolio
+# Module 7 - Further exploration
 
-A new Flutter project.
+In this school assignment I was supposed to explore something further or something new, both in design and in coding. For the design I decided to explore brutalism and for the coding part, the Flutter framework and the Dart programming language.
+## My Portfolio
 
-## Getting Started
+I used this exploration to create a portfolio web application for my school projects. It's simple and brutal, there is a list of projects and when you click on one, more info will display clashed on top of each other. You can click on an info card and drag it to have a better look at it. I didn't have time to implement everything I wanted. The drag part was supposed to be drag and drop, the info cards were also supposed to change order on hover so the hovered one would appear on top. I also wanted to have the cursor change to move or grab when hovering the info cards but that wasn't working and as I sad, time ran out so I couldn't figure that out for now.
 
-This project is a starting point for a Flutter application.
+## Live version
 
-A few resources to get you started if this is your first Flutter project:
+Here is a link to the live version:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+> [My Portfolio]()
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
