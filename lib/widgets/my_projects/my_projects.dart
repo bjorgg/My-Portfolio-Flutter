@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myportfolio/constants/adaptiveSize.dart';
 import 'package:myportfolio/constants/app_colors.dart';
-import 'package:myportfolio/widgets/right_col/right_col.dart';
 
+// Project type constructor
 class Project {
   int id;
   String module;
@@ -22,10 +22,6 @@ class Project {
   String toString() {
     return '{ ${this.id}, ${this.module}, ${this.title}, ${this.type}, ${this.tech}, ${this.description}, ${this.logo}, ${this.image}, ${this.github}, ${this.livesite} }';
   }
-
-  String titleDescription() {
-    return '${this.title} - ${this.description}';
-  }
 }
 
 class MyProjects extends StatelessWidget {
@@ -36,7 +32,9 @@ class MyProjects extends StatelessWidget {
     this.handleProjectOnTap,
   });
 
+  // Building the list
   Widget _buildList() {
+    // Adding projects to myProjects list of type Project
     myProjects.add(Project(
         1,
         '1',
@@ -44,7 +42,7 @@ class MyProjects extends StatelessWidget {
         'Collabrative',
         'HTML, CSS',
         'This is my first group project were we created a website for a fictional web design studio. \n\nThis project was about “testing the water”. Creating a UI, coding it, deploying it and presenting the work to industry professionals. \n\nThe group used Agile techniques to organize the work, created the UI in Figma, coded with HTML and CSS and deployed on GitHub.',
-        'Stofan_logo.svg',
+        'assets/Stofan_logo.svg',
         'Stofan_img.png',
         'https://github.com/Huldas96/Stofan',
         'https://huldas96.github.io/Stofan'));
@@ -55,7 +53,7 @@ class MyProjects extends StatelessWidget {
         'Collabrative',
         'HTML, SCSS, JavaScript',
         'This is an Icelandic health tracker calendar app. It is a single page Interactive and Responsive Web Application. \n\nThe user can create their own conditions or appointments that will be logged into a calendar. All logged information is stored in local storage so that the user can keep track of his/her own health.',
-        'health_app_logo.svg',
+        'assets/health_app_logo.svg',
         'health_app_img.png',
         'https://github.com/johannTor/health-app',
         'http://heilsanmin.surge.sh'));
@@ -66,7 +64,7 @@ class MyProjects extends StatelessWidget {
         'Collabrative',
         'React, React Leaflet ...',
         'In this project we worked with API\'s, React, Packages, modules and bundlers, UX and much more. \n\nOur web-application is all about Icelandic beers and breweries. The frontpage renders a map with your location(optional) and it shows you the nearest breweries to you. You can flip and sort through a lists of all beers or breweries. Each brewery has its own information page containing a list with all of their beers. In the beer list you can toggle heart or checkbox for each beer to keep track of what you have loved and what you have tried.',
-        'ol_logo.svg',
+        'assets/ol_logo.svg',
         'ol_img.png',
         'https://github.com/alexanderjarl91/bruggid',
         'https://oliceland.netlify.app'));
@@ -77,7 +75,7 @@ class MyProjects extends StatelessWidget {
         'Individual',
         'HTML, CSS, JavaScript',
         'This is a school project working with History API and local storage. I created a single page application (SPA) plant collection. There are three pages; front page, plant collection and favorites. On each plant you can click on a more info button to show more info and click again to hide it. Each plant has also a add to favorites button and when you click it the plant shows on favorites page and the button changes color and displays remove from favorites. You can click on the remove button on either page to remove the plant from the favorite page. The plant array is set to local storage so the plants stay as favorites when you refresh.',
-        'plant_collection.svg',
+        'assets/plant_collection.svg',
         'plant_coll_img.png',
         'https://github.com/bjorgg/JavaScript-Web-APIs',
         'https://bjorgg.github.io/JavaScript-Web-APIs'));
@@ -88,7 +86,7 @@ class MyProjects extends StatelessWidget {
         'Individual',
         'React, CSS',
         'This is a school project in using React. I created a simple memory card game. For this assignment I decided not to have any extra features as score, high score or difficulties. But it\'s possible to add later. You can play the game and start a new game, that\'s it. Everybody should now how to play memory so i won\'t explain it here. You can find comments in the JavaScript files.',
-        'memory_game.svg',
+        'assets/memory_game.svg',
         'mem_game_img.png',
         'https://github.com/bjorgg/React-Memory-game',
         'https://bjorgg.github.io/React-Memory-game'));
@@ -96,12 +94,13 @@ class MyProjects extends StatelessWidget {
     return ListView.builder(
       itemCount: myProjects.length,
       itemBuilder: (context, index) {
-        return _buildGroupRow(myProjects[index], context);
+        return _buildRow(myProjects[index], context);
       },
     );
   }
 
-  Widget _buildGroupRow(Project myProject, BuildContext context) {
+  // Building the row
+  Widget _buildRow(Project myProject, BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
       decoration: BoxDecoration(
@@ -109,10 +108,14 @@ class MyProjects extends StatelessWidget {
           bottom: BorderSide(color: merlin, width: .5),
         ),
       ),
+      // InkWell is a rectangular area of a Material that responds to touch
       child: InkWell(
+        // When a project is tapped the state of HomeView widget changes and
+        // the project is assigned to the object projectInfo
         onTap: () {
           handleProjectOnTap(myProject);
         },
+        // Each row will have these values and styling
         child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -158,6 +161,7 @@ class MyProjects extends StatelessWidget {
     );
   }
 
+  // Building of the MyProjects widget itself
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
@@ -168,6 +172,7 @@ class MyProjects extends StatelessWidget {
             bottom: BorderSide(color: merlin, width: .5),
           ),
         ),
+        // Row of list headers
         child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -210,6 +215,7 @@ class MyProjects extends StatelessWidget {
               ),
             ]),
       ),
+      // The project list
       Expanded(
         child: _buildList(),
       ),

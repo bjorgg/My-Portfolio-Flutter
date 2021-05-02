@@ -11,23 +11,28 @@ const url =
     "https://www.linkedin.com/in/bj%C3%B6rg-gunnarsd%C3%B3ttir-456a76ab/";
 
 class LeftCol extends StatelessWidget {
-  final String logo = 'bg_logo.svg';
+  final String logo = 'assets/bg_logo.svg';
 
   final Function handleProjectOnTap;
 
   LeftCol({
     this.handleProjectOnTap,
   });
+
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(100, 40, 0, 40),
       decoration: BoxDecoration(color: desertStorm),
+      // Setting the size of the container according the screen size
       width: MediaQuery.of(context).size.width * 0.6,
       height: MediaQuery.of(context).size.height * 1,
       child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+        // My name and LinkedIn link with some styling, placement and
+        // hover cursor of pointer
         HoverCursor(
           cursor: Cursor.pointer,
+          // Rotating the text
           child: RotatedBox(
             quarterTurns: 1,
             child: TextButton(
@@ -46,6 +51,7 @@ class LeftCol extends StatelessWidget {
             ),
           ),
         ),
+        // Row with list title and logo with styling and placement
         Padding(
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
           child: Row(
@@ -67,6 +73,7 @@ class LeftCol extends StatelessWidget {
                 ),
               ]),
         ),
+        // Project list widget
         Expanded(
           child: MyProjects(
             handleProjectOnTap: handleProjectOnTap,
